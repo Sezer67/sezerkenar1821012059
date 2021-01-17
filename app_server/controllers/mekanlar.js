@@ -1,6 +1,6 @@
 var request = require('postman-request');
 var apiSecenekleri = {
-	sunucu: "http://localhost:3000",
+	sunucu: "http://localhost:5000",
 	apiYolu: '/api/mekanlar/'
 }
 
@@ -110,7 +110,7 @@ var mekanBilgisiGetir=function(req,res,callback){
 		function(hata,cevap,mekanDetaylari){
 			var gelenMekan = mekanDetaylari;
 			//enlem,boylam bir dizi şeklinde bunu ayır ilk enlem
-			if(cevap.statusCode=200){
+			if(cevap.statusCode==200){
 			gelenMekan.koordinatlar={
 				enlem:mekanDetaylari.koordinatlar[0],
 				boylam:mekanDetaylari.koordinatlar[1]
